@@ -1,4 +1,3 @@
-import math
 from typing import Optional, Union, Dict
 
 import pygame
@@ -48,7 +47,7 @@ class UIUpdateProgressBar(UIStatusBar):
                          visible=visible)
 
     def set_steps(self, step_count: int, step_text: str, display_percent: bool = True, unit: str = "", scaling_factor: float = 0):
-        self.step_count = math.ceil(step_count)
+        self.step_count = step_count
         self.step_value = 100 / self.step_count / 100
         self.steps_taken = 0
         self.percent_full = 0
@@ -63,26 +62,15 @@ class UIUpdateProgressBar(UIStatusBar):
         else:
             if self.step_count:
                 if self.scaling_factor:
-                    current_value = self.maximum_progress / self.step_count * self.steps_taken * self.scaling_factor
-                    maximum_value = self.maximum_progress * self.scaling_factor
+                    current_value = '{:.2f}'.format(round(self.maximum_progress / self.step_count * self.steps_taken * self.scaling_factor, 2))
+                    maximum_value = '{:.2f}'.format(round(self.maximum_progress * self.scaling_factor, 2))
 
-                    if current_value > maximum_value:
-                        current_value = maximum_value
-
-                    current_value_formatted = '{:.2f}'.format(round(current_value, 2))
-                    maximum_value_formatted = '{:.2f}'.format(round(maximum_value, 2))
-
-                    return f"{current_value_formatted}{self.unit} / {maximum_value_formatted}{self.unit}"
+                    return f"{current_value}{self.unit} / {maximum_value}{self.unit}"
                 else:
-                    current_value = self.maximum_progress / self.step_count * self.steps_taken
-                    maximum_value = self.maximum_progress
-                    current_value_formatted = round(current_value, 2)
-                    maximum_value_formatted = round(maximum_value, 2)
+                    current_value = round(self.maximum_progress / self.step_count * self.steps_taken, 2)
+                    maximum_value = round(self.maximum_progress, 2)
 
-                    if current_value > maximum_value:
-                        current_value = maximum_value
-
-                    return f"{current_value_formatted}{self.unit} / {maximum_value_formatted}{self.unit}"
+                    return f"{current_value}{self.unit} / {maximum_value}{self.unit}"
             else:
                 return ""
 

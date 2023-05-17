@@ -1,8 +1,8 @@
 {
     "#window_base_theme": {
         "colours": {
-            "normal_border": "#2F2918",
-            "dark_bg": "#AC9D72"
+            "normal_border": "#4F2B6D",
+            "dark_bg": "#9E89D1"
         },
         "misc": {
             "shape": "rounded_rectangle",
@@ -25,9 +25,6 @@
         "prototype": "#window_base_theme"
     },
     "#change_cat_gender_window": {
-        "prototype": "#window_base_theme"
-    },
-    "#debug_console": {
         "prototype": "#window_base_theme"
     }
 }

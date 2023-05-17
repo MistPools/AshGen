@@ -1,37 +1,15 @@
-<strong>v0.8.7</strong>
-- Fixed a bug that prevented the game from installing the update
-
-<strong>v0.8.6</strong>
-- Fixed a bug that prevented the game from starting
-
-<strong>v0.8.5</strong>
-- Adjusted the difficulty of patrols
-- Classic Mode cats will no longer gain shock from the 'large amount of death' moon events
-- Fixed the save conversion for BLUE2 eyes and ANY2CREAMY patches
-- Attempted fix for game refusing to open on binary builds when a save traceback needs to be displayed
-- Fixed injury, illness and perm condition thoughts from showing up where they shouldn't belong
-- Fixed outside cats not having perm conditions
-- Added safeguards to protect against files being saved incorrectly
-- Minor UI alignment fixes.
-- Fixed sick and permanent conditions thoughts being assigned incorrectly
-- Fixed a crash that occurs with very old cats
-- Fixed the download progress bar being stuck
-- Fixed the download being slow
-- Added a debug menu
-- Other minor bugfixes
-
 <strong>v0.8.4</strong>
-- Fixed a crash when there was only one cat left in the clan
-- Fixed some issues with the new name code
+- fixed a crash when there was only one cat left in the clan
+- fixed some issues with the new name code
 
 <strong>v0.8.3</strong>
-- Fixed some naming code
+- fixed some naming code
 
 <strong>v0.8.2</strong>
-- Squashed some bugs
+- squashed some bugs
 
 <strong>v0.8.1</strong>
-- Added changelog text
+- added changelog text
 
 <strong>v0.8.0</strong>
 <u>Cat and Sprite Changes:</u>

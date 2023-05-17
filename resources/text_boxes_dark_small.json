@@ -3,7 +3,7 @@
         "colours":
         {
             "dark_bg": "#00000000",
-            "normal_text": "#EFE5CE"
+            "normal_text": "#E7D5F6"
         },
         "font":
         {
@@ -35,7 +35,7 @@
     "#text_box_22_horizcenter_red_dark": {
         "prototype": "#text_box_22_horizcenter_dark",
         "colours": {
-            "normal_text": "#dc6a5b"
+            "normal_text": "#E87E98"
         }
     },
     "#text_box_22_horizcenter_spacing_95_dark": {
@@ -100,7 +100,7 @@
     "#text_box_30_horizcenter_red_dark": {
         "prototype": "#text_box_30_horizcenter_dark",
         "colours": {
-            "normal_text": "#dc6a5b"
+            "normal_text": "#E87E98"
         }
     },
     "#text_box_30_horizcenter_spacing_95_dark": {

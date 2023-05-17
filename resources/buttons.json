@@ -2738,20 +2738,20 @@
     {
         "colours":
         {
-            "normal_bg":"#ac9d72",
-            "hovered_bg":"#644d39",
-            "selected_bg":"#644d39",
-            "active_bg": "#644d39",
+            "normal_bg":"#9E89D1",
+            "hovered_bg":"#664AA0",
+            "selected_bg":"#664AA0",
+            "active_bg": "#664AA0",
             "normal_text":"#000000",
             "hovered_text":"#FFFFFF",
             "selected_text":"#FFFFFF",
             "disabled_text":"#FFFFFF",
             "text_shadow": "#00000000",
-            "normal_border": "#887b56",
-            "hovered_border": "#503825",
-            "disabled_border": "#503825",
-            "selected_border": "#503825",
-            "active_border": "#776045"
+            "normal_border": "#8A6CB6",
+            "hovered_border": "#5E4394",
+            "disabled_border": "#5E4394",
+            "selected_border": "#5E4394",
+            "active_border": "#785BAF"
         },
         "font":
         {

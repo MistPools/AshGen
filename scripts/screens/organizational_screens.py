@@ -27,7 +27,7 @@ from scripts.game_structure.image_button import UIImageButton
 from scripts.utility import get_text_box_theme, scale, quit  # pylint: disable=redefined-builtin
 import pygame_gui
 from scripts.game_structure.game_essentials import game, screen, screen_x, screen_y, MANAGER
-from scripts.game_structure.windows import DeleteCheck, UpdateAvailablePopup, ChangelogPopup, SaveError
+from scripts.game_structure.windows import DeleteCheck, UpdateAvailablePopup, ChangelogPopup
 from scripts.game_structure.discord_rpc import _DiscordRPC
 from scripts.game_structure import image_cache
 from ..datadir import get_data_dir, get_cache_dir
@@ -261,7 +261,7 @@ class StartScreen(Screens):
             if game.switches['traceback']:
                 print("Traceback:")
                 print(game.switches['traceback'])
-                error_text += "<br><br>" + escape("".join(traceback.format_exception(game.switches['traceback'], game.switches['traceback'], game.switches['traceback'].__traceback__)))  # pylint: disable=line-too-long
+                error_text += "<br><br>" + escape("".join(traceback.format_exception(game.switches['traceback'])))  # pylint: disable=line-too-long
             self.error_label.set_text(error_text)
             self.error_box.show()
             self.error_label.show()
@@ -551,11 +551,7 @@ class SettingsScreen(Screens):
                 return
             elif event.ui_element == self.save_settings_button:
                 self.save_settings()
-                try:
-                    game.save_settings()
-                except:
-                    SaveError(traceback.format_exc())
-                    self.change_screen("start screen")
+                game.save_settings()
                 self.settings_changed = False
                 self.update_save_button()
                 return

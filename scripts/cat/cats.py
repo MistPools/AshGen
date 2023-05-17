@@ -575,8 +575,6 @@ class Cat():
         self.exiled = True
         self.outside = True
         self.status = 'exiled'
-        self.injuries.clear()
-        self.illnesses.clear()
         if self.trait == 'vengeful':
             self.thought = "Swears their revenge for being exiled"
         else:
@@ -911,7 +909,7 @@ class Cat():
                         possible_trait = self.personality_groups.get(x)
                         chosen_trait = choice(possible_trait)
                         if chosen_trait in self.kit_traits:
-                            self.trait = choice(self.traits)
+                            self.trait = self.trait
                             self.mentor_influence.insert(0, 'None')
                         else:
                             self.trait = chosen_trait
@@ -1879,12 +1877,10 @@ class Cat():
         condition_directory = get_save_dir() + '/' + clanname + '/conditions'
         condition_file_path = condition_directory + '/' + self.ID + '_conditions.json'
 
-        # remove the ID_conditions.json if the cat has no conditions
-        # remove injuries/illnesses if cat is outside/dead
-        if self.outside or self.dead:
-            self.injuries.clear()
-            self.illnesses.clear()
-        if (not self.is_ill() and not self.is_injured() and not self.is_disabled()):
+        if not os.path.exists(condition_directory):
+            os.makedirs(condition_directory)
+
+        if (not self.is_ill() and not self.is_injured() and not self.is_disabled()) or self.dead or self.outside:
             if os.path.exists(condition_file_path):
                 os.remove(condition_file_path)
             return
@@ -1900,7 +1896,12 @@ class Cat():
         if self.is_disabled():
             conditions["permanent conditions"] = self.permanent_condition
 
-        game.safe_save(condition_file_path, conditions)
+        try:
+            with open(condition_file_path, 'w') as rel_file:
+                json_string = ujson.dumps(conditions, indent=4)
+                rel_file.write(json_string)
+        except:
+            print(f"WARNING: Saving conditions of cat #{self} didn't work.")
 
     def load_conditions(self):
         if game.switches['clan_name'] != '':
@@ -2342,6 +2343,8 @@ class Cat():
 
     def save_relationship_of_cat(self, relationship_dir):
         # save relationships for each cat
+        if not os.path.exists(relationship_dir):
+            os.makedirs(relationship_dir)
 
         rel = []
         for r in self.relationships.values():
@@ -2361,7 +2364,13 @@ class Cat():
             }
             rel.append(r_data)
 
-        game.safe_save(f"{relationship_dir}/{self.ID}_relations.json", rel)
+        try:
+            with open(relationship_dir + '/' + self.ID + '_relations.json',
+                      'w') as rel_file:
+                json_string = ujson.dumps(rel, indent=4)
+                rel_file.write(json_string)
+        except:
+            print(f"WARNING: Saving relationship of cat #{self} didn't work.")
 
     def load_relationship_of_cat(self):
         if game.switches['clan_name'] != '':
@@ -2846,7 +2855,7 @@ class Cat():
                 self.age = key_age
         try:
             if not updated_age and self.age is not None:
-                self.age = "senior"
+                self.age = "elder"
         except AttributeError:
             print("ERROR: cat has no age attribute! Cat ID: " + self.ID)
             print("Possibly the disappearing cat bug? Ping luna on the discord if you see this message")
