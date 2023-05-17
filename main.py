@@ -195,7 +195,7 @@ while True:
             screen.fill((45, 33, 55))
         else:
             screen.fill((188, 149, 212))
-
+    
     if game.settings['custom cursor']:
         if pygame.mouse.get_cursor() == disabled_cursor:
             pygame.mouse.set_cursor(cursor)
