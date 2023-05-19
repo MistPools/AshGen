@@ -4090,11 +4090,11 @@
     {
         "colours":
         {
-            "normal_bg":"#655934",
-            "hovered_bg":"#1E1809",
-            "selected_bg":"#1E1809",
-            "normal_text":"#EEE4CD",
-            "hovered_text":"#EFE5CE",
+            "normal_bg":"#664AA0",
+            "hovered_bg":"#3C2564",
+            "selected_bg":"#3C2564",
+            "normal_text":"#F3E8E5",
+            "hovered_text":"#F3E8E5",
             "text_shadow": "#00000000"
         },
         "font":
