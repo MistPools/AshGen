@@ -3366,9 +3366,9 @@
   {
     "colours":
     {
-      "normal_border":  "#CEC2A8",
-      "filled_bar": "#796045",
-      "unfilled_bar": "#CEC2A8"
+      "normal_border":  "#C9B5E5",
+      "filled_bar": "#785BAF",
+      "unfilled_bar": "#C9B5E5"
     },
     "misc":
     {
@@ -3383,7 +3383,7 @@
     "prototype": "#relation_bar",
     "colours":
     {
-      "filled_bar": "#E67161"
+      "filled_bar": "#CF447C"
     }
   },
   "#relation_bar_pos":
@@ -3391,7 +3391,7 @@
     "prototype": "#relation_bar",
     "colours":
     {
-      "filled_bar": "#8CB250"
+      "filled_bar": "#1aa8ad"
     }
   },
   "#relation_bar_dark":
@@ -3399,8 +3399,8 @@
     "prototype": "#relation_bar",
     "colours":
     {
-      "normal_border":  "#2F2918",
-      "unfilled_bar": "#2F2918"
+      "normal_border":  "#4F2B6D",
+      "unfilled_bar": "#4F2B6D"
     }
   },
   "#relation_bar_neg_dark":
@@ -3408,7 +3408,7 @@
     "prototype": "#relation_bar_dark",
     "colours":
     {
-      "filled_bar": "#E67161"
+      "filled_bar": "#EF849D"
     }
   },
   "#relation_bar_pos_dark":
@@ -3416,7 +3416,7 @@
     "prototype": "#relation_bar_dark",
     "colours":
     {
-      "filled_bar": "#8CB250"
+      "filled_bar": "#81BEB1"
     }
   },
   "#switch_focus_button":
